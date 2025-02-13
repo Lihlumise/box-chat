@@ -1,0 +1,112 @@
+body {
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    
+}
+.chat-list-header {
+    background-color: #5e17eb77;
+}
+
+.chat-list-header h1 {
+    margin: auto;
+    font-size: 2rem;
+}
+
+.chat-tile {
+    --app-color-time: #74dff6;
+    --app-color-focus: #ffec4e;
+    display: grid;
+    grid-template-columns: 2fr 12fr 2fr;
+    grid-template-rows: 2fr 1fr ;
+    row-gap: 0;
+    column-gap: 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: fit-content;
+    height: fit-content;
+    font-size: 0px;
+    margin: 0;
+}
+
+.chat-tile .leading{
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 1 ;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    color: var(--app-color-focus);
+    align-content: center;
+    height: 100%;
+}
+
+.chat-tile .leading h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.3rem;
+    border: 2px solid var(--app-color-focus);
+    border-radius: 50%;
+    font-size: 1.7rem;
+}
+
+.chat-tile .tile-title{
+    grid-row: 1, span 1;
+    grid-column: 2 / span 1;
+    height: min-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+
+.chat-tile .tile-title h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 1.7rem;
+}
+
+.chat-tile .tile-subtitle{
+    grid-row: 2 / span 1;
+    grid-column: 2, span 1;
+    color: lightgray;
+    height: min-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 5px;
+}
+
+.chat-tile .tile-subtitle h4{
+    font-size: 0.7rem;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    align-content:start;
+    justify-content: start;
+}
+
+.chat-tile .trailing{
+    grid-row: 1 / span 2;
+    grid-column: 3 / span 1;
+    color: var(--app-color-time);
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    align-content: center;
+}
+.chat-tile .trailing h5{
+    font-size: 0.7rem;
+    height: min-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
