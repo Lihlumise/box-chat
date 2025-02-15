@@ -13,33 +13,34 @@
     <section class="main-header">
         <h1>BoxChat</h1>
     </section>
-    <form>
+    <form id="create-account-form">
         <div class="form-text">
             <h1>Create Account</h1>
         </div>
 
         <div class="form-input">
             <label for="email">Email:</label>
-            <input id="email" type="email">
+            <input id="email" type="email" 
+                title="Invalid email" required>
         </div>
 
         <div class="form-input">
             <label for="username">Username:</label>
-            <input id="username" type="text">
+            <input id="username" type="text" required>
         </div>
 
         <div class="form-input">
             <label for="password">Password:</label>
-            <input id="password" type="password">
+            <input id="password" type="password" required>
         </div>
 
         <div class="form-input">
             <label for="confirm-password">Confirm Password:</label>
-            <input id="confirm-password" type="password">
+            <input id="confirm-password" type="password" required>
         </div>
 
         <div class="form-buttons">
-            <button class="primary-button" type="button" onclick="createAccount()">Create Account</button>
+            <button class="primary-button" type="submit" onclick="createAccount()">Create Account</button>
         </div>
     </form>
 </body>

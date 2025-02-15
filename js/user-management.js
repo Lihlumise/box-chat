@@ -13,21 +13,41 @@ function checkIfAccountExists(userAccounts, userInput) {
 }
 
 function createAccount() {
-    const inputEmail = document.getElementById("email").value;
-    const inputUsername = document.getElementById("username").value;
-    const inputPassword = document.getElementById("confirm-password").value;
+    preventDefault();
+    const form = document.getElementById('create-account-form');
 
-    let userAccounts = getUserAccounts();
-    let accountExists = checkIfAccountExists(userAccounts, inputEmail);
+    if (form.checkValidity()) {
+        const inputEmail = document.getElementById("email").value;
+        const inputUsername = document.getElementById("username").value;
+        const inputPassword = document.getElementById("password").value;
+        const inputConfirmPassword = document.getElementById("confirm-password").value;
 
-    let newAccount = { 'email': inputEmail, 'username': inputUsername, 'password': inputPassword };
+        if (passwordsMatch(inputPassword, inputConfirmPassword)) {
+            let userAccounts = getUserAccounts();
+            let accountExists = checkIfAccountExists(userAccounts, inputEmail);
 
-    if (accountExists) {
-        alert('The email is already in use');
+            let newAccount = { 'email': inputEmail, 'username': inputUsername, 'password': inputPassword };
+
+            if (accountExists) {
+                alert('The email is already in use');
+            } else {
+                userAccounts.push(newAccount);
+                localStorage.setItem('userAccounts', JSON.stringify(userAccounts));
+                alert("Your account was successfully created! \nYou can now login");
+                location.replace("../index.html");
+            }
+        } else {
+            alert('The passwords you entered do not match');
+        }
     } else {
-        userAccounts.push(newAccount);
-        localStorage.setItem('userAccounts', JSON.stringify(userAccounts));
-        alert("Your account was successfully created! \nYou can now login");
-        location.href = "../index.html";
+        alert('Please fill in all the fields correctly');
+    }
+}
+
+function passwordsMatch(password, confirmPassword) {
+    if (password === confirmPassword) {
+        return true;
+    } else {
+        return false
     }
 }
