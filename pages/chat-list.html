@@ -5,32 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/global.css" rel="stylesheet">
+    <script src="../js/chat-list.js"></script>
     <title>Chat</title>
 </head>
 
-<body>
+<body onload="displayChatList()">
     <section class="chat-list-header">
         <h1>BoxChat</h1>
     </section>
 
-    <section class="chat-list">
-        <div class="chat-tile">
-            <div class="leading">
-                <h2>AB</h2>
-            </div>
-
-            <div class="tile-title">
-                <h2>Username</h2>
-            </div>
-
-            <div class="tile-subtitle">
-                <h4>Latest Message</h4>
-            </div>
-
-            <div class="trailing">
-                <h5>09:36</h5>
-            </div>
-        </div>
+    <section id="chat-list" class="chat-list">
+        
     </section>
 </body>
 
