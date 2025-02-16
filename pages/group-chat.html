@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles/global.css" rel="stylesheet">
+    <link href="../styles/group-chat.css" rel="stylesheet">
+    <script src="../js/group-chat.js"></script>
+    <title>Group Chat</title>
+</head>
+<body onload="displayGroupChat()">
+    <section class="top-bar">
+        <h2>Group</h2>
+    </section>
+    
+    <div id="group-chat-messages" class="group-chat-messages">
+
+    </div>
+    <form class="footer">
+        <input type="text" class="chat-input" required placeholder="Type your message"/>
+        <button type="submit" class="send-button">Send</button>
+    </form>
+</body>
+</html>
