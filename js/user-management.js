@@ -51,3 +51,22 @@ function passwordsMatch(password, confirmPassword) {
         return false
     }
 }
+
+function signIn() {
+    const users = getUserAccounts();
+    console.log(users);
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    let userFound = false;
+
+    for (let i = 0; i < users.length; i++) {
+
+        if (username === users[i]['username'] && password === users[i]['password']) {
+            userFound = true;
+            location.href = "../pages/chat-list.html";
+        }
+    }
+    if(!userFound){ 
+        alert("The username or password do not match");
+    }
+}
