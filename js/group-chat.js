@@ -1,24 +1,32 @@
-function getGroupChat() {
+function getAllChats() {
     const chats = JSON.parse(localStorage.getItem('chats'));
 
-    let groupChat = chats === null ?
+    return chats === null ? [{
+        sender: 'user1',
+        message: 'Welcome to BoxChat!',
+        time: Date.now()
+    }] : chats;
+}
+
+function getGroupChat() {
+    console.log(localStorage.getItem('chats'));
+    const chats = JSON.parse(localStorage.getItem('chats'));
+    console.log(chats);
+    let groupChat = chats ? chats[0]['messages'] :
         [{
             sender: 'user1',
             message: 'Welcome to BoxChat!',
             time: Date.now()
-        }]
-        : chats[0]['messages'];
-
+        }]  ;
     return groupChat;
 }
 
 function displayGroupChat() {
-    const groupMessagesSection = document.getElementById("group-chat-messages");
+    const groupMessagesSection = document.getElementById('group-chat-messages');
 
     let groupMessages = getGroupChat();
     console.log(groupMessages);
     groupMessages.forEach(message => {
-
         const chatBubble = document.createElement('div');
         chatBubble.classList.add('chat-bubble-left');
 
@@ -45,6 +53,24 @@ function displayGroupChat() {
 
         groupMessagesSection.appendChild(chatBubble);
     });
+}
+
+function sendMessage() {
+    const inputMessage = document.getElementById('chat-input').value;
+    let groupChat = getGroupChat();
+
+    const newMessage = {
+        sender: 'user1',
+        message: inputMessage,
+        time: Date.now()
+    }
+
+    groupChat.push(newMessage);
+
+    const chats = getAllChats();
+    chats[0]['messages'] = groupChat;
+
+    localStorage.setItem('chats', JSON.stringify(chats));
 }
 
 function formatTime(value) {
