@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/global.css" rel="stylesheet">
+    <script src="../js/user-management.js"></script>
     <title>Create an account</title>
 </head>
 
@@ -12,33 +13,33 @@
     <section class="main-header">
         <h1>BoxChat</h1>
     </section>
-    <form>
+    <form id="create-account-form">
         <div class="form-text">
             <h1>Create Account</h1>
         </div>
 
         <div class="form-input">
             <label for="email">Email:</label>
-            <input id="email" type="email">
+            <input id="email" type="email" title="Invalid email" autocomplete="email" required>
         </div>
 
         <div class="form-input">
             <label for="username">Username:</label>
-            <input id="username" type="text">
+            <input id="username" type="text" autocomplete="username" required>
         </div>
 
         <div class="form-input">
             <label for="password">Password:</label>
-            <input id="password" type="password">
+            <input id="password" type="password" autocomplete="new-password" required>
         </div>
 
         <div class="form-input">
             <label for="confirm-password">Confirm Password:</label>
-            <input id="confirm-password" type="password">
+            <input id="confirm-password" type="password" autocomplete="new-password" required>
         </div>
 
         <div class="form-buttons">
-            <button class="primary-button">Create Account</button>
+            <button class="primary-button" type="submit" onclick="createAccount()">Create Account</button>
         </div>
     </form>
 </body>
