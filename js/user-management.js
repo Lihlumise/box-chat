@@ -62,6 +62,7 @@ function signIn() {
     for (let i = 0; i < users.length; i++) {
 
         if (username === users[i]['username'] && password === users[i]['password']) {
+            sessionStorage.setItem('sessionId', JSON.stringify(users[i]));
             userFound = true;
             location.href = "../pages/chat-list.html";
         }
