@@ -39,10 +39,21 @@ function displayChatList() {
         const trialing = document.createElement('div');
         trialing.classList.add('trailing');
         const trailingContent = document.createElement('h5');
-        trailingContent.textContent = chat['messages'][0]['time'];
+        trailingContent.textContent = formatTime(chat['messages'][0]['time']);
         trialing.appendChild(trailingContent);
         chatTile.appendChild(trialing)
 
         chatListSection.appendChild(chatTile);
     });
+}
+
+function formatTime(value){
+    const date = new Date(value);
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    return `${hours}:${minutes}`;
 }
