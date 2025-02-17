@@ -12,12 +12,12 @@ function getGroupChat() {
     console.log(localStorage.getItem('chats'));
     const chats = JSON.parse(localStorage.getItem('chats'));
     console.log(chats);
-    let groupChat = chats ? chats[0]['messages'] :
+    let groupChat = chats === null ? 
         [{
             sender: 'user1',
             message: 'Welcome to BoxChat!',
             time: Date.now()
-        }]  ;
+        }] :chats[0]['messages'] ;
     return groupChat;
 }
 
@@ -26,7 +26,6 @@ function displayGroupChat() {
     const groupMessagesSection = document.getElementById('group-chat-messages');
 
     let groupMessages = getGroupChat();
-    console.log(groupMessages);
     groupMessages.forEach(message => {
         const chatBubble = document.createElement('div');
         message.sender === currentUser.username ?
@@ -60,9 +59,8 @@ function displayGroupChat() {
 
 function sendMessage() {
     const inputMessage = document.getElementById('chat-input').value;
-    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(sessionStorage.getItem('sessionId'));
     let groupChat = getGroupChat();
-
     const newMessage = {
         sender: currentUser.username,
         message: inputMessage,
