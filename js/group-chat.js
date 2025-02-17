@@ -22,12 +22,15 @@ function getGroupChat() {
 }
 
 function displayGroupChat() {
+    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     const groupMessagesSection = document.getElementById('group-chat-messages');
 
     let groupMessages = getGroupChat();
     console.log(groupMessages);
     groupMessages.forEach(message => {
         const chatBubble = document.createElement('div');
+        message.sender === currentUser.username ?
+        chatBubble.classList.add('chat-bubble-right'):
         chatBubble.classList.add('chat-bubble-left');
 
         const sender = document.createElement('div');
@@ -57,10 +60,11 @@ function displayGroupChat() {
 
 function sendMessage() {
     const inputMessage = document.getElementById('chat-input').value;
+    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     let groupChat = getGroupChat();
 
     const newMessage = {
-        sender: 'user1',
+        sender: currentUser.username,
         message: inputMessage,
         time: Date.now()
     }
