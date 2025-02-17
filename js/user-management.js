@@ -13,7 +13,7 @@ function checkIfAccountExists(userAccounts, userInput) {
 }
 
 function createAccount() {
-    preventDefault();
+    //preventDefault();
     const form = document.getElementById('create-account-form');
 
     if (form.checkValidity()) {
@@ -54,7 +54,6 @@ function passwordsMatch(password, confirmPassword) {
 
 function signIn() {
     const users = getUserAccounts();
-    console.log(users);
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     let userFound = false;
@@ -62,8 +61,9 @@ function signIn() {
     for (let i = 0; i < users.length; i++) {
 
         if (username === users[i]['username'] && password === users[i]['password']) {
+            sessionStorage.setItem('sessionId', JSON.stringify(users[i]));
             userFound = true;
-            location.href = "../pages/chat-list.html";
+            location.href = "./pages/chat-list.html";
         }
     }
     if(!userFound){ 
