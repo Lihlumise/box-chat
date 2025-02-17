@@ -54,7 +54,6 @@ function passwordsMatch(password, confirmPassword) {
 
 function signIn() {
     const users = getUserAccounts();
-    console.log(users);
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     let userFound = false;
