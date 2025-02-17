@@ -70,3 +70,7 @@ function signIn() {
         alert("The username or password do not match");
     }
 }
+
+function openCreateAccount(){
+    location.href = "./pages/create-account.html";
+}
