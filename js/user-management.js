@@ -26,7 +26,11 @@ function createAccount() {
             let userAccounts = getUserAccounts();
             let accountExists = checkIfAccountExists(userAccounts, inputEmail);
 
-            let newAccount = { 'email': inputEmail, 'username': inputUsername, 'password': inputPassword };
+            let newAccount = { 
+                'email': inputEmail, 
+                'username': inputUsername, 
+                'password': inputPassword, 
+                'privateChats': [] };
 
             if (accountExists) {
                 alert('The email is already in use');
@@ -63,10 +67,14 @@ function signIn() {
         if (username === users[i]['username'] && password === users[i]['password']) {
             sessionStorage.setItem('sessionId', JSON.stringify(users[i]));
             userFound = true;
-            location.href = "./pages/chat-list.html";
+            location.href = "./pages/group-chat.html";
         }
     }
     if(!userFound){ 
         alert("The username or password do not match");
     }
+}
+
+function openCreateAccount(){
+    location.href = "./pages/create-account.html";
 }
