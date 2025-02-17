@@ -41,7 +41,6 @@ function showContactList() {
 }
 
 function startPrivateChat(contactUsername) {
-    console.log(`contact username: ${contactUsername}`);
     const currentUser = JSON.parse(sessionStorage.getItem('sessionId'));
 
     const userAccounts = getUserAccounts();
@@ -54,8 +53,6 @@ function startPrivateChat(contactUsername) {
     }
     
     let isNewChat = true;
-    console.log(currentUserChats);
-    alert('stop now');
     
     for (let i = 0; i < currentUserChats.length; i++) {
         if (currentUserChats[i]['other'] === contactUsername) {

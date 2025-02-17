@@ -9,9 +9,7 @@ function getAllChats() {
 }
 
 function getGroupChat() {
-    console.log(localStorage.getItem('chats'));
     const chats = JSON.parse(localStorage.getItem('chats'));
-    console.log(chats);
     let groupChat = chats === null ? 
         [{
             sender: 'user1',
