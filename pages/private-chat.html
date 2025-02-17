@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles/global.css" rel="stylesheet">
+    <link href="../styles/private-chat.css" rel="stylesheet">
+    <script src="../js/private-chat.js"></script>
+    <title>Chat</title>
+</head>
+
+<body onload="displayChat()">
+    <section class="top-bar">
+        <h2 id="title-bar">User</h2>
+        <a href="./contact-list.html">Users</a>
+    </section>
+    <div id="private-chat-messages" class="private-chat-messages">
+
+    </div>
+    <form class="footer">
+        <input id="chat-input" type="text" class="chat-input" required placeholder="Type your message" />
+        <button type="submit" class="send-button" onclick="sendMessage()">Send</button>
+    </form>
+</body>
+
+</html>

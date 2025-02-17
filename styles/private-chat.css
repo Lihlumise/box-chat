@@ -3,7 +3,7 @@ body {
     align-items: end;
 }
 
-.chat-input{
+.chat-input {
     box-sizing: border-box;
     padding-left: 10px;
     color: black;
@@ -15,7 +15,6 @@ body {
     outline: none;
     border: none;
     border-radius: 15px;
-
 }
 
 .send-button {
@@ -49,8 +48,6 @@ body {
     color: white;
     position: absolute;
     right: 10px;
-    height: 100%;
-    align-content: center;
 
 }
 
@@ -60,52 +57,52 @@ body {
     width: 100%;
 }
 
-.chat-bubble-left{
+.chat-bubble-left {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns:  10fr 2fr;
-    grid-template-rows: 1fr 1fr ;
+    grid-template-columns: 10fr 2fr;
+    grid-template-rows: 1fr 1fr;
     width: fit-content;
     height: fit-content;
     color: black;
     background-color: #99eeff;
     border-radius: 15px;
     padding: 5px;
-    margin-top: 5px;
+    margin-top: .5rem;
 }
 
-.chat-bubble-left .sender{
+.chat-bubble-left .sender {
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
 }
 
-.chat-bubble-left .sender h5{
+.chat-bubble-left .sender h5 {
     margin: 0;
     padding-top: 2px;
     padding-left: 5px;
     color: #5e17eb;
 }
 
-.chat-bubble-left .message{
+.chat-bubble-left .message {
     margin-top: .2rem;
     margin-bottom: .2rem;
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
     padding-left: 5px;
-    
+
 }
 
-.chat-bubble-left .message h5{
+.chat-bubble-left .message h5 {
     margin: 0;
 }
 
-.chat-bubble-left .time{
+.chat-bubble-left .time {
     grid-row: 1 / span 2;
     grid-column: 2 / span 1;
     align-content: center;
 }
 
-.chat-bubble-left .time h5{
+.chat-bubble-left .time h5 {
     margin: 0;
 }
 
@@ -125,37 +122,37 @@ body {
     right: 0;
 }
 
-.chat-bubble-right .sender{
+.chat-bubble-right .sender {
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
 }
 
-.chat-bubble-right .sender h5{
+.chat-bubble-right .sender h5 {
     margin: 0;
     padding-top: 2px;
     padding-left: 5px;
     color: #5e17eb;
 }
 
-.chat-bubble-right .message{
+.chat-bubble-right .message {
     margin-top: .2rem;
     margin-bottom: .2rem;
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
     padding-left: 5px;
-    
+
 }
 
-.chat-bubble-right .message h5{
+.chat-bubble-right .message h5 {
     margin: 0;
 }
 
-.chat-bubble-right .time{
+.chat-bubble-right .time {
     grid-row: 1 / span 2;
     grid-column: 2 / span 1;
     align-content: center;
 }
 
-.chat-bubble-right .time h5{
+.chat-bubble-right .time h5 {
     margin: 0;
 }

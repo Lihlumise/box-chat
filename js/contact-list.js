@@ -40,22 +40,20 @@ function showContactList() {
 
 }
 
-
 function startPrivateChat(contactUsername) {
-    console.log(`contact username: ${contactUsername}`);
     const currentUser = JSON.parse(sessionStorage.getItem('sessionId'));
 
     const userAccounts = getUserAccounts();
     let currentUserChats = [];
-    for (let i = 0; i < userAccounts; i++) {
+    for (let i = 0; i < userAccounts.length; i++) {
         if (userAccounts[i]['username'] === currentUser.username) {
             currentUserChats = userAccounts[i]['privateChats'];
             break;
         }
     }
-
+    
     let isNewChat = true;
-
+    
     for (let i = 0; i < currentUserChats.length; i++) {
         if (currentUserChats[i]['other'] === contactUsername) {
             sessionStorage.setItem('currentPrivateChat', currentUserChats[i]['id']);
@@ -65,12 +63,8 @@ function startPrivateChat(contactUsername) {
     }
 
     if (isNewChat) {
-        alert('here now');
         let newChatId = Date.now();
         for (let i = 0; i < userAccounts.length; i++) {
-            alert('inside loop');
-            console.log(userAccounts[i]['username']);
-            console.log(currentUser.username);
             if (userAccounts[i]['username'] === currentUser.username) {
                 currentUserChats.push({
                     id: newChatId,
@@ -82,7 +76,6 @@ function startPrivateChat(contactUsername) {
                     password: userAccounts[i]['password'],
                     privateChats: currentUserChats
                 }
-                alert('now here');
                 localStorage.setItem('userAccounts', JSON.stringify(userAccounts));
             } else if (userAccounts[i]['username'] === contactUsername) {
                 let otherUserChats = userAccounts[i]['privateChats'];
@@ -103,8 +96,8 @@ function startPrivateChat(contactUsername) {
                     id: newChatId, 
                     messages: []});
 
-
-                localStorage.setItem('chats', JSON.stringify(allPrivateChats))
+                sessionStorage.setItem('currentPrivateChat', JSON.stringify(newChatId));
+                localStorage.setItem('privateChats', JSON.stringify(allPrivateChats))
                 localStorage.setItem('userAccounts', JSON.stringify(userAccounts));
             }
         }
