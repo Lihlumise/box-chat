@@ -39,3 +39,80 @@ function showContactList() {
     });
 
 }
+
+
+function startPrivateChat(contactUsername) {
+    console.log(`contact username: ${contactUsername}`);
+    const currentUser = JSON.parse(sessionStorage.getItem('sessionId'));
+
+    const userAccounts = getUserAccounts();
+    let currentUserChats = [];
+    for (let i = 0; i < userAccounts; i++) {
+        if (userAccounts[i]['username'] === currentUser.username) {
+            currentUserChats = userAccounts[i]['privateChats'];
+            break;
+        }
+    }
+
+    let isNewChat = true;
+
+    for (let i = 0; i < currentUserChats.length; i++) {
+        if (currentUserChats[i]['other'] === contactUsername) {
+            sessionStorage.setItem('currentPrivateChat', currentUserChats[i]['id']);
+            isNewChat = false;
+            break;
+        }
+    }
+
+    if (isNewChat) {
+        alert('here now');
+        let newChatId = Date.now();
+        for (let i = 0; i < userAccounts.length; i++) {
+            alert('inside loop');
+            console.log(userAccounts[i]['username']);
+            console.log(currentUser.username);
+            if (userAccounts[i]['username'] === currentUser.username) {
+                currentUserChats.push({
+                    id: newChatId,
+                    other: contactUsername
+                });
+                userAccounts[i] = {
+                    email: userAccounts[i]['email'],
+                    username: userAccounts[i]['username'],
+                    password: userAccounts[i]['password'],
+                    privateChats: currentUserChats
+                }
+                alert('now here');
+                localStorage.setItem('userAccounts', JSON.stringify(userAccounts));
+            } else if (userAccounts[i]['username'] === contactUsername) {
+                let otherUserChats = userAccounts[i]['privateChats'];
+                otherUserChats.push({
+                    id: newChatId,
+                    other: currentUser.username,
+                });
+
+                userAccounts[i] = {
+                    email: userAccounts[i]['email'],
+                    username: userAccounts[i]['username'],
+                    password: userAccounts[i]['password'],
+                    privateChats: otherUserChats,
+                }
+
+                let allPrivateChats = getGetAllPrivateChats();
+                allPrivateChats.push({
+                    id: newChatId, 
+                    messages: []});
+
+
+                localStorage.setItem('chats', JSON.stringify(allPrivateChats))
+                localStorage.setItem('userAccounts', JSON.stringify(userAccounts));
+            }
+        }
+    }
+    location.href = '../pages/private-chat.html';
+}
+
+function getGetAllPrivateChats(){
+    const privateChats = localStorage.getItem('privateChats');
+    return privateChats ? JSON.parse(privateChats) : [];
+}
