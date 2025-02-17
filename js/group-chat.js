@@ -22,7 +22,7 @@ function getGroupChat() {
 }
 
 function displayGroupChat() {
-    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(sessionStorage.getItem('sessionId'));
     const groupMessagesSection = document.getElementById('group-chat-messages');
 
     let groupMessages = getGroupChat();
