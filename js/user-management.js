@@ -26,7 +26,11 @@ function createAccount() {
             let userAccounts = getUserAccounts();
             let accountExists = checkIfAccountExists(userAccounts, inputEmail);
 
-            let newAccount = { 'email': inputEmail, 'username': inputUsername, 'password': inputPassword };
+            let newAccount = { 
+                'email': inputEmail, 
+                'username': inputUsername, 
+                'password': inputPassword, 
+                'privateChats': [] };
 
             if (accountExists) {
                 alert('The email is already in use');
