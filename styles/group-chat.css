@@ -1,15 +1,17 @@
 body {
-    padding-top: 60px;
+    padding-top: 70px;
     align-items: end;
+    background-image: url(../assets/images/background-chat.jpg);
+    background-size: cover;
 }
 
 .chat-input{
     box-sizing: border-box;
     padding-left: 10px;
     color: black;
-    background-color: #ffec4e;
+    background-color: #e0e0e0;
     height: 2rem;
-    min-width: 350px;
+    flex-grow: 1;
     font-size: 1rem;
     letter-spacing: .1em;
     outline: none;
@@ -19,9 +21,11 @@ body {
 }
 
 .send-button {
+    margin-left: 10px;
+    margin-right: 20px;
     box-sizing: border-box;
-    color: black;
-    background-color: lightgray;
+    color: #ffffff;
+    background-color: #007bff;
     font-size: 1rem;
     border: none;
     border-radius: 15px;
@@ -35,7 +39,7 @@ body {
     justify-content: space-between;
     top: 0;
     left: 0;
-    background-color: #5e17eb;
+    background-color: #ff6600;
     width: 100%;
 }
 
@@ -55,6 +59,8 @@ body {
 }
 
 .footer {
+    padding: 10px;
+    display: flex;
     position: fixed;
     bottom: 10px;
     width: 100%;
@@ -74,7 +80,7 @@ body {
     width: fit-content;
     height: fit-content;
     color: black;
-    background-color: #99eeff;
+    background-color: #d3d3d3cd;
     border-radius: 15px;
     padding: 5px;
     margin-top: 5px;
@@ -124,7 +130,7 @@ body {
     width: fit-content;
     height: fit-content;
     color: black;
-    background-color: #ffec4e;
+    background-color: #a8dadccd;
     border-radius: 15px;
     padding: 5px;
     margin-top: 5px;
