@@ -1,6 +1,6 @@
 window.addEventListener("storage", function (event) {
     if (event.key === 'chats') {
-        displayGroupChat();
+        displayChat();
     }
 });
 
