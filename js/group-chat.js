@@ -1,3 +1,9 @@
+window.addEventListener("storage", function (event) {
+    if (event.key === 'chats') {
+        displayGroupChat();
+    }
+});
+
 function getAllChats() {
     const chats = JSON.parse(localStorage.getItem('chats'));
 
@@ -23,12 +29,14 @@ function displayGroupChat() {
     const currentUser = JSON.parse(sessionStorage.getItem('sessionId'));
     const groupMessagesSection = document.getElementById('group-chat-messages');
 
+    groupMessagesSection.innerHTML = '';
+
     let groupMessages = getGroupChat();
     groupMessages.forEach(message => {
         const chatBubble = document.createElement('div');
         message.sender === currentUser.username ?
-        chatBubble.classList.add('chat-bubble-right'):
-        chatBubble.classList.add('chat-bubble-left');
+            chatBubble.classList.add('chat-bubble-right') :
+            chatBubble.classList.add('chat-bubble-left');
 
         const sender = document.createElement('div');
         sender.classList.add('sender');
