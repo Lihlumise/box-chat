@@ -60,6 +60,12 @@ body {
     width: 100%;
 }
 
+.group-chat-messages {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .chat-bubble-left{
     box-sizing: border-box;
     display: grid;
@@ -110,6 +116,7 @@ body {
 }
 
 .chat-bubble-right{
+    align-self: flex-end;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 10fr 2fr;
@@ -121,7 +128,6 @@ body {
     border-radius: 15px;
     padding: 5px;
     margin-top: 5px;
-    position: absolute;
     right: 0;
 }
 

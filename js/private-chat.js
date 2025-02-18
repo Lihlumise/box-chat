@@ -1,12 +1,14 @@
 window.addEventListener("storage", function (event) {
-    if (event.key === 'chats') {
-        displayGroupChat();
+    if (event.key === 'privateChats') {
+        displayChat();
     }
 });
 
 function displayChat() {
     const currentUser = JSON.parse(sessionStorage.getItem('sessionId'));
     const messagesSection = document.getElementById('private-chat-messages');
+
+    messagesSection.innerHTML = '';
 
     let privateMessages = getChat();
     console.log(privateMessages);
