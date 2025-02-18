@@ -9,31 +9,33 @@
     <title>Sign In to BoxChat</title>
 </head>
 
-<body>
-    <section class="main-header">
-        <h1>BoxChat</h1>
-    </section>
-    <form id="sign-in-form">
-        <div class="form-text">
-            <h1>Login</h1>
-            <h4>Sign in to continue</h4>
-        </div>
-
-        <div class="form-input">
-            <label for="username">Username:</label>
-            <input id="username" type="text" autocomplete="username" required>
-        </div>
-
-        <div class="form-input">
-            <label for="password">Password:</label>
-            <input id="password" type="password" autocomplete="current-password" required>
-        </div>
-
-        <div class="form-buttons">
-            <button type="button" class="primary-button" onclick="signIn()">Sign In</button>
-            <button type="button" class="secondary-button" onclick="openCreateAccount()">Create Account</button>
-        </div>
-    </form>
+<body class="login-body">
+    <div class="box-background">
+        <section class="main-header">
+            <img src="./assets/images/boxchat_logo.svg" alt="BoxChat logo">
+        </section>
+        <form id="sign-in-form">
+            <div class="form-text">
+                <h1>Login</h1>
+                <h4>Sign in to continue</h4>
+            </div>
+            
+            <div class="form-input">
+                <label for="username">Username:</label>
+                <input id="username" type="text" autocomplete="username" required>
+            </div>
+            
+            <div class="form-input">
+                <label for="password">Password:</label>
+                <input id="password" type="password" autocomplete="current-password" required>
+            </div>
+            
+            <div class="form-buttons">
+                <button type="button" class="primary-button" onclick="signIn()">Sign In</button>
+                <div class="secondary-button"><p>Don't have an account? <a href="./pages/create-account.html" >Sign Up</a></p></div>
+            </div>
+        </form>
+    </div>
 
 </body>
 </html>
