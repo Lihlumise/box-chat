@@ -57,6 +57,11 @@ body {
     width: 100%;
 }
 
+.private-chat-messages {
+    display: flex;
+    flex-direction: column;
+}
+
 .chat-bubble-left {
     box-sizing: border-box;
     display: grid;
@@ -118,7 +123,6 @@ body {
     border-radius: 15px;
     padding: 5px;
     margin-top: 5px;
-    position: absolute;
     right: 0;
 }
 
