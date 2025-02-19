@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles/global.css" rel="stylesheet">
+    <link href="../styles/view-profile.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" />
+    <script src="../js/view-profile.js"></script>
+    <title>Profile</title>
+</head>
+
+<body onload="showProfileInfo()">
+    <section class="top-bar">
+        <a href="./contact-list.html"><i class="fa fa-address-book"></i></a>
+        <h2>View Profile</h2>
+       
+    </section>
+    <div class="profile-container">
+        <div class="profile-icon">
+            <span class="material-symbols-outlined">
+                account_circle
+            </span>
+        </div>
+        <div class="profile-info">
+            <div class="username">
+                <p id="username-text"></p>
+            </div>
+            <div class="email">
+                <p id="email-text"></p>
+            </div>
+        </div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+</body>
+
+</html>
