@@ -124,3 +124,23 @@ form {
     align-content: center;
     justify-items: center;
 }
+
+@media (max-width:600px){
+    img {
+    height: 3rem;
+    margin-bottom: 1rem;
+    }
+
+    .form-text {
+        margin-bottom: .5rem;
+    }
+
+    .form-text h1 {
+        font-size: 1.7rem;
+    }
+
+    .form-text {
+        margin-top: .2rem;
+        margin-bottom: .2rem;
+    }
+}
