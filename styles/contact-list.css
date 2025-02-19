@@ -127,3 +127,45 @@ body {
 .fa-solid,.fa-user {
     font-size: large;
 }
+
+@media (max-width:600px) {
+
+    body {
+        margin-top: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .contact-tile {
+        margin-bottom: 10px;
+    }
+
+    .contact-tile .contact-username h2{
+        font-size: 1rem;
+    }
+
+    .contact-tile .contact-username h2::before{
+        display: flex;
+        content: 'Username: ';
+        color: #ff6600;
+        font-size: 1rem;
+    }
+
+    .contact-tile .contact-email h4::before{
+        display: flex;
+        content: 'Email: ';
+        color: #ff6600;
+        font-size: 1rem;
+     }
+
+    .contact-tile .contact-email h4{
+        font-size: 1rem;
+     }
+
+     .contact-tile {
+        border-radius: 15px;
+        height: 4.5rem;
+     }
+     
+
+}
