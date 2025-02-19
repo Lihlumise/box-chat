@@ -1,8 +1,10 @@
 body {
-    padding-top: 70px;
+    padding-top: 75px;
     align-items: end;
     background-image: url(../assets/images/background-chat.jpg);
     background-size: cover;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .top-bar {
@@ -21,12 +23,17 @@ body {
     text-align: center;
 }
 
-.top-bar a {
-    color: white;
-    position: absolute;
-    right: 10px;
-
+.top-bar a{
+    margin-left: 10px;
+    width: 50px;
+    align-content: center;
 }
+
+.top-bar a i{
+    font-size: 2rem;
+    color: #ffffff;
+}
+
 
 .private-chat-messages {
     display: flex;
