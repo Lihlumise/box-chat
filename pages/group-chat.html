@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/global.css" rel="stylesheet">
     <link href="../styles/group-chat.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" />
     <script src="../js/group-chat.js"></script>
     <title>Group Chat</title>
 </head>
+
 <body onload="displayGroupChat()">
     <section class="top-bar">
+        <a href="./contact-list.html"><i class="fa fa-address-book"></i></a>
         <h2>Group</h2>
-        <a href="./contact-list.html">Users</a>
+        <a href="./view-profile.html">
+            <span class="material-symbols-outlined">
+                account_circle
+            </span>
+        </a>
     </section>
-    
+
     <div id="group-chat-messages" class="group-chat-messages">
 
     </div>
     <div class="footer">
-        <input id="chat-input" type="text" class="chat-input" required placeholder="Type your message"/>
-        <button type="submit" class="send-button" onclick="sendMessage()" >Send</button>
+        <input id="chat-input" type="text" class="chat-input" required placeholder="Type your message" />
+        <button type="submit" class="send-button" onclick="sendMessage()">Send</button>
     </div>
 </body>
+
 </html>
