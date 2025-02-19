@@ -17,8 +17,9 @@ function showContactList() {
 
         const leading = document.createElement('div');
         leading.classList.add('leading');
-        const leadingContent = document.createElement('h2');
-        leadingContent.textContent = contact['username'][0];
+        const leadingContent = document.createElement('i');
+        leadingContent.classList.add('fa');
+        leadingContent.classList.add('fa-arrow-left');
         leading.appendChild(leadingContent);
         contactTile.appendChild(leading);
         contactListContainer.appendChild(contactTile);
